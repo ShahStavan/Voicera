@@ -23,8 +23,8 @@ declare module "webcamjs" {
   interface Webcam {
     set(options: WebcamOptions): void;
     attach(target: string | HTMLElement): void;
-    on(event: string, callback: Function): void;
-    off(event: string, callback: Function): void;
+    on(event: string, callback: (...args: any[]) => void): void;
+    off(event: string, callback: (...args: any[]) => void): void;
     snap(callback?: (data_uri: string) => void): void;
     freeze(): void;
     unfreeze(): void;

@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 const FaceResults: React.FC = () => {
-  const { detectedFaces, isProcessing } = useAppSelector((state) => state.face);
+  const { detectedFaces } = useAppSelector((state) => state.face);
 
   type EmotionType =
     | "neutral"
@@ -96,9 +96,6 @@ const FaceResults: React.FC = () => {
     <div className="space-y-4">
       {detectedFaces.map((face) => {
         const mainEmotion = getMainEmotion(face);
-        const mainEmotionValue = face.expressions
-          ? face.expressions[mainEmotion.toLowerCase() as EmotionType]
-          : 0;
 
         const topEmotions = face.expressions
           ? Object.entries(face.expressions)
