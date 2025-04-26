@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-manrope: "Manrope", system-ui, -apple-system, sans-serif;
+    --font-outfit: "Outfit", system-ui, -apple-system, sans-serif;
+
+    --background: oklch(98% 0.02 240);
+    --foreground: oklch(11% 0.02 240);
+    --card: oklch(100% 0 0);
+    --card-foreground: oklch(11% 0.02 240);
+    --popover: oklch(100% 0 0);
+    --popover-foreground: oklch(11% 0.02 240);
+    --primary: oklch(53% 0.25 240);
+    --primary-foreground: oklch(98% 0.02 240);
+    --secondary: oklch(96.1% 0.02 240);
+    --secondary-foreground: oklch(11% 0.02 240);
+    --muted: oklch(96.1% 0.02 240);
+    --muted-foreground: oklch(47% 0.05 240);
+    --accent: oklch(96.1% 0.02 240);
+    --accent-foreground: oklch(11% 0.02 240);
+    --destructive: oklch(60% 0.25 0);
+    --destructive-foreground: oklch(98% 0.02 240);
+    --border: oklch(91.4% 0.02 240);
+    --input: oklch(91.4% 0.02 240);
+    --ring: oklch(53% 0.25 240);
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: oklch(11% 0.02 240);
+    --foreground: oklch(98% 0.02 240);
+    --card: oklch(4% 0.02 240);
+    --card-foreground: oklch(98% 0.02 240);
+    --popover: oklch(4% 0.02 240);
+    --popover-foreground: oklch(98% 0.02 240);
+    --primary: oklch(60% 0.25 240);
+    --primary-foreground: oklch(98% 0.02 240);
+    --secondary: oklch(27% 0.05 240);
+    --secondary-foreground: oklch(98% 0.02 240);
+    --muted: oklch(20% 0.05 240);
+    --muted-foreground: oklch(65% 0.05 240);
+    --accent: oklch(27% 0.05 240);
+    --accent-foreground: oklch(98% 0.02 240);
+    --destructive: oklch(60% 0.25 0);
+    --destructive-foreground: oklch(98% 0.02 240);
+    --border: oklch(27% 0.05 240);
+    --input: oklch(27% 0.05 240);
+    --ring: oklch(48% 0.25 240);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-all duration-200 ease-in-out border border-border/20 hover:shadow-lg;
+  }
+
+  .dashboard-grid {
+    @apply grid grid-cols-12 gap-6;
+  }
+
+  .dashboard-sidebar {
+    @apply col-span-2 lg:col-span-12;
+  }
+
+  .dashboard-main {
+    @apply col-span-10 lg:col-span-12;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-outfit);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
