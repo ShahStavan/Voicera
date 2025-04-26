@@ -27,15 +27,16 @@ const FaceResults: React.FC = () => {
     | "disgusted"
     | "surprised";
 
-  const getMainEmotion = (face: FaceDetection): string => {
+  const getMainEmotion = (face: FaceDetection): EmotionType | "Unknown" => {
     if (!face.expressions) return "Unknown";
 
-    const expressions = Object.entries(face.expressions);
+    const expressions = Object.entries(face.expressions) as [
+      EmotionType,
+      number
+    ][];
     expressions.sort((a, b) => b[1] - a[1]);
 
-    return (
-      expressions[0][0].charAt(0).toUpperCase() + expressions[0][0].slice(1)
-    );
+    return expressions[0][0];
   };
 
   const getEmotionIcon = (emotion: string) => {

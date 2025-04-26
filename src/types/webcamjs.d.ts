@@ -1,4 +1,12 @@
 declare module "webcamjs" {
+  type WebcamEventMap = {
+    load: () => void;
+    live: () => void;
+    error: (error: Error) => void;
+    uploadComplete: (response: string) => void;
+    uploadProgress: (progress: number) => void;
+  };
+
   interface WebcamOptions {
     width?: number;
     height?: number;
@@ -23,8 +31,14 @@ declare module "webcamjs" {
   interface Webcam {
     set(options: WebcamOptions): void;
     attach(target: string | HTMLElement): void;
-    on(event: string, callback: (...args: any[]) => void): void;
-    off(event: string, callback: (...args: any[]) => void): void;
+    on<K extends keyof WebcamEventMap>(
+      event: K,
+      callback: WebcamEventMap[K]
+    ): void;
+    off<K extends keyof WebcamEventMap>(
+      event: K,
+      callback: WebcamEventMap[K]
+    ): void;
     snap(callback?: (data_uri: string) => void): void;
     freeze(): void;
     unfreeze(): void;
