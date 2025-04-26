@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Voicera - Face Detection Made Easy
 
-## Getting Started
+Voicera helps you detect and analyze faces in real-time using your computer's camera. It's fast, easy to use, and works right in your web browser.
 
-First, run the development server:
+## What Can It Do?
+
+- Performs advanced real-time face detection and analysis
+- Provides instant gender and age recognition
+- Analyzes facial expressions and emotions
+- Tracks facial features and head position
+- Shows you where faces are on the screen
+- Works smoothly on any device
+- Uses the latest web technology
+
+## Features in Detail
+
+### Real-time Face Analysis
+
+- **Gender Recognition**: Automatically detects and displays gender for each face
+- **Age Estimation**: Provides accurate age estimates in real-time
+- **Emotion Analysis**: Recognizes 7 different emotions:
+  - Neutral
+  - Happy
+  - Sad
+  - Angry
+  - Fearful
+  - Disgusted
+  - Surprised
+- **Face Recognition**: Tracks facial landmarks and head angles for precise face detection
+
+### Advanced Capabilities
+
+- Real-time processing at 1 frame per second
+- Multi-face detection and analysis
+- Smooth UI with intuitive visualization
+- Privacy-focused (all processing happens locally)
+- Works in various lighting conditions
+- Easy-to-understand emotion confidence scores
+
+## What We Use
+
+- **Website Builder**: Next.js
+- **Look and Feel**: Tailwind CSS for clean design
+- **Face Detection**: face-api.js for finding faces
+- **Screen Updates**: Redux for smooth changes
+- **Camera Access**: WebcamJS for using your camera
+
+## Before You Start
+
+Make sure you have:
+
+- Node.js installed on your computer
+- npm or yarn to install the needed files
+
+## How to Set It Up
+
+1. Get the project files:
+
+```bash
+git clone https://github.com/ShahStavan/Voicera.git
+cd voicera
+```
+
+2. Install what you need:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the website:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open your web browser and go to [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How Our Files Are Organized
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                   # Main website files
+├── components/            # Building blocks of the site
+│   ├── ControlPanel/     # Camera controls
+│   ├── FaceResults/      # Shows what faces were found
+│   ├── ModelLoader/      # Gets everything ready
+│   ├── WebcamCapture/    # Handles your camera
+│   └── ui/              # Basic design pieces
+├── config/               # Settings
+├── lib/                  # Helper tools
+├── redux/               # Keeps track of changes
+└── types/               # Code organization help
+```
 
-## Learn More
+## How It Works
 
-To learn more about Next.js, take a look at the following resources:
+1. When you open the website, it loads what it needs to find faces
+2. You'll see a progress bar while it gets ready
+3. Your camera turns on when everything is set
+4. It starts looking for faces right away
+5. You can see the results next to your camera view
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Want to Help?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+We welcome your ideas and improvements! Feel free to share your changes with us.
 
-## Deploy on Vercel
+## Rules for Use
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is free to use under the MIT License - check the LICENSE file to learn more
