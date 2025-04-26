@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Outfit } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/redux/store";
-import dynamic from "next/dynamic";
-
-const ModelLoader = dynamic(() => import("@/components/ModelLoader"), {
-  ssr: false,
-});
+import { ModelLoaderWrapper } from "@/components/ModelLoaderWrapper";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -34,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.variable} ${outfit.variable} antialiased`}>
         <Providers>
-          <ModelLoader>{children}</ModelLoader>
+          <ModelLoaderWrapper>{children}</ModelLoaderWrapper>
         </Providers>
       </body>
     </html>
